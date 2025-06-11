@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>BuildRight Homes - Modern Home Renovation</title>
+    <meta name="description" content="BuildRight Homes: Your trusted partner for high-quality, sustainable kitchen remodels, bathroom upgrades, and full home renovations. Over a decade of trusted service.">
+
+    <!-- Performance optimized CDN loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Core CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Advanced CDNs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("PFATyVVqB6dfozezc");
+        }
+    </script>
+
+    <!-- WCAG AAA Compliant Color Palette and Design System -->
+    <style>
+        :root {
+            /* Primary Color System */
+            --color-primary: #f6a6a6;
+            --color-secondary: #f6cca6;
+            --color-accent: #a6f5f6;
+
+            /* Background System */
+            --color-bg: #0f172a;
+            --color-card-bg: #1e293b;
+
+            /* Text System */
+            --color-text-primary: #f8fafc;
+            --color-text-secondary: #b0c6dd;
+            --color-text-muted: #6993be;
+
+            /* Border System */
+            --color-border: #475569;
+            --color-border-hover: #64748b;
+
+            /* Interactive States */
+            --color-primary-hover: #fad4d4;
+            --color-secondary-hover: #fae6d4;
+
+            /* Status Colors */
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #ef4444;
+            --color-info: #3b82f6;
+
+            /* Design System */
+            --border-radius: 8px;
+            --font-heading: 'DM Serif Display', serif;
+            --font-body: 'EB Garamond', serif;
+        }
+
+        /* 🎯 GUARANTEED VISIBILITY BASE STYLES */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg) !important;
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-body) !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important; /* CRITICAL: Prevent horizontal scrolling */
+            max-width: 100vw !important; /* CRITICAL: Prevent horizontal scrolling */
+        }
+
+        /* 🔴 CRITICAL: BUTTON SYSTEM (ZERO TOLERANCE FOR INVISIBLE BUTTONS) */
+        .btn-primary {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important;
+            border: 2px solid var(--color-primary) !important;
+            font-weight: 600 !important;
+            padding: 12px 24px !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+            min-height: 44px !important;
+            min-width: 44px !important;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-hover) !important;
+            border-color: var(--color-primary-hover) !important;
+            color: var(--color-bg) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+
+        .btn-secondary {
+            background-color: transparent !important;
+            color: var(--color-primary) !important;
+            border: 2px solid var(--color-primary) !important;
+            font-weight: 600 !important;
+            padding: 12px 24px !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+            min-height: 44px !important;
+            min-width: 44px !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--color-bg) !important;
+            border-color: var(--color-primary) !important;
+        }
+
+        /* 🔴 CRITICAL: NAVIGATION SYSTEM */
+        .navbar {
+            background-color: var(--color-bg) !important;
+            border-bottom: 1px solid var(--color-border) !important;
+            backdrop-filter: blur(10px) !important;
+            padding: 16px 0 !important;
+            position: fixed !important; /* Changed from sticky to fixed as per plan for 'sticky navigation bar at the top' */
+            top: 0 !important;
+            width: 100% !important;
+            z-index: 1000 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .navbar-brand {
+            color: var(--color-text-primary) !important;
+            font-weight: 700 !important;
+            font-family: var(--font-heading) !important;
+            font-size: 24px !important;
+            text-decoration: none !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--color-text-secondary) !important;
+            font-weight: 500 !important;
+            padding: 8px 16px !important;
+            border-radius: calc(var(--border-radius) / 2) !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            display: block !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--color-primary) !important;
+            background-color: var(--color-card-bg) !important;
+        }
+
+        .navbar-toggler {
+            border: 2px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important;
+            background: transparent !important;
+            padding: 8px 12px !important;
+        }
+
+        /* 🔴 CRITICAL: FORM SYSTEM */
+        .form-control {
+            background-color: var(--color-bg) !important;
+            border: 2px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important;
+            border-radius: var(--border-radius) !important;
+            padding: 12px 16px !important;
+            font-size: 16px !important;
+            width: 100% !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-primary) !important;
+            box-shadow: 0 0 0 3px rgba(75, 94, 170, 0.1) !important;
+            outline: none !important;
+        }
+
+        .form-control::placeholder {
+            color: var(--color-text-muted) !important;
+            opacity: 1 !important;
+        }
+
+        .form-label {
+            color: var(--color-text-primary) !important;
+            font-weight: 600 !important;
+            margin-bottom: 8px !important;
+            display: block !important;
+        }
+
+        /* 🔴 CRITICAL: CARD SYSTEM */
+        .card {
+            background-color: var(--color-card-bg) !important;
+            border: 1px solid var(--color-border) !important;
+            color: var(--color-text-primary) !important;
+            border-radius: var(--border-radius) !important;
+            transition: all 0.3s ease !important;
+            overflow: hidden !important;
+            height: 100% !important; /* MANDATORY: Uniform card height */
+            display: flex !important; /* MANDATORY: Uniform card height */
+            flex-direction: column !important; /* MANDATORY: Uniform card height */
+        }
+
+        .card:hover {
+            border-color: var(--color-border-hover) !important;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+            transform: translateY(-4px) !important;
+        }
+
+        .card-title {
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-heading) !important;
+            font-weight: 700 !important;
+            margin-bottom: 12px !important;
+        }
+
+        .card-text {
+            color: var(--color-text-secondary) !important;
+            line-height: 1.6 !important;
+            flex: 1 !important; /* MANDATORY: Uniform card height - content expands */
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        /* 🔴 CRITICAL: ICON SYSTEM */
+        .icon {
+            color: var(--color-primary) !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .icon:hover {
+            color: var(--color-primary-hover) !important;
+        }
+
+        /* 🔴 CRITICAL: LINK SYSTEM */
+        a {
+            color: var(--color-primary) !important;
+            text-decoration: underline !important;
+            text-underline-offset: 2px !important;
+            transition: all 0.2s ease !important;
+        }
+
+        a:hover {
+            color: var(--color-primary-hover) !important;
+            text-decoration: none !important;
+        }
+
+        /* 🔴 CRITICAL: HEADING HIERARCHY */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-text-primary) !important;
+            font-family: var(--font-heading) !important;
+            font-weight: 400 !important; /* DM Serif Display is typically 400 */
+            line-height: 1.2 !important;
+            margin-bottom: 16px !important;
+        }
+        h1 { font-size: 48px !important; }
+        h2 { font-size: 32px !important; }
+        h3 { font-size: 24px !important; }
+        h4 { font-size: 1.5rem !important; }
+        h5 { font-size: 1.25rem !important; }
+        h6 { font-size: 1rem !important; }
+
+
+        /* 🔴 CRITICAL: RESPONSIVE TEXT SCALING */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px !important; }
+            h2 { font-size: 24px !important; }
+            h3 { font-size: 20px !important; }
+            h4 { font-size: 1.25rem !important; }
+        }
+
+        /* 🔴 CRITICAL: UTILITY CLASSES */
+        .text-primary-color { color: var(--color-primary) !important; }
+        .text-text-primary { color: var(--color-text-primary) !important; }
+        .text-text-secondary { color: var(--color-text-secondary) !important; }
+        .text-text-muted { color: var(--color-text-muted) !important; }
+        .bg-primary { background-color: var(--color-primary) !important; }
+        .bg-card { background-color: var(--color-card-bg) !important; }
+        .border-primary { border-color: var(--color-primary) !important; }
+
+        /* 🔴 CRITICAL: FOCUS STATES FOR ACCESSIBILITY */
+        button:focus,
+        input:focus,
+        textarea:focus,
+        select:focus,
+        a:focus {
+            outline: 2px solid var(--color-primary) !important;
+            outline-offset: 2px !important;
+        }
+
+        /* 🔴 CRITICAL: HOVER STATES FOR INTERACTIVE ELEMENTS */
+        button,
+        .btn,
+        [role="button"] {
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+        }
+
+        button:hover,
+        .btn:hover,
+        [role="button"]:hover {
+            transform: translateY(-1px) !important;
+        }
+
+        /* 🔴 CRITICAL: UNIFORM CARD HEIGHT SYSTEM */
+        .card-container {
+            display: flex !important;
+            align-items: stretch !important;
+        }
+
+        /* Grid containers for equal heights */
+        .portfolio-grid, .services-grid, .testimonial-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+            gap: 24px !important;
+            align-items: stretch !important;
+        }
+
+
+        @media (max-width: 768px) {
+            .portfolio-grid, .services-grid, .testimonial-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* 🔴 CRITICAL: MOBILE NAVIGATION FIX */
+        .mobile-menu {
+            position: fixed !important;
+            top: 64px !important;
+            right: 0 !important;
+            height: calc(100vh - 64px) !important;
+            width: 280px !important;
+            background-color: var(--color-bg) !important;
+            border-left: 1px solid var(--color-border) !important;
+            transform: translateX(100%) !important;
+            transition: transform 0.3s ease !important;
+            z-index: 999 !important;
+            overflow-y: auto !important;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0) !important;
+        }
+
+        .hamburger {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-around !important;
+            width: 24px !important;
+            height: 24px !important;
+            background: transparent !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 0 !important;
+        }
+
+        .hamburger span {
+            display: block !important;
+            width: 100% !important;
+            height: 2px !important;
+            background-color: var(--color-text-primary) !important;
+            transition: all 0.3s ease !important;
+            transform-origin: center !important;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px) !important;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0 !important;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px) !important;
+        }
+
+        /* 🔴 CRITICAL: MOBILE TOUCH TARGETS */
+        @media (max-width: 768px) {
+            .btn-primary,
+            .btn-secondary {
+                min-height: 48px !important;
+                min-width: 48px !important;
+                padding: 16px 24px !important;
+                font-size: 16px !important;
+            }
+
+            .nav-link {
+                padding: 16px 20px !important;
+                font-size: 16px !important;
+                display: block !important;
+                border-bottom: 1px solid var(--color-border) !important;
+            }
+
+            .card {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        /* 🔴 CRITICAL: MOBILE FORM FIXES */
+        @media (max-width: 768px) {
+            .form-control {
+                font-size: 16px !important;
+                padding: 16px !important;
+                min-height: 48px !important;
+            }
+
+            textarea.form-control {
+                min-height: 120px !important;
+            }
+        }
+
+        /* Swiper Styling */
+        .swiper {
+            padding: 20px 0 60px 0 !important;
+            overflow: visible !important;
+        }
+
+        .swiper-pagination {
+            bottom: 10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: var(--color-text-muted) !important;
+            opacity: 0.5 !important;
+            width: 10px !important;
+            height: 10px !important;
+            margin: 0 4px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--color-primary) !important;
+            opacity: 1 !important;
+            transform: scale(1.3) !important;
+        }
+
+        /* Mobile Navigation Buttons */
+        @media (min-width: 768px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: var(--color-primary) !important;
+                background-color: var(--color-bg) !important;
+                width: 44px !important;
+                height: 44px !important;
+                border-radius: 50% !important;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+                transition: all 0.3s ease !important;
+                border: 2px solid var(--color-border) !important;
+            }
+
+            .swiper-button-next:hover,
+            .swiper-button-prev:hover {
+                background-color: var(--color-primary) !important;
+                color: var(--color-bg) !important;
+                transform: scale(1.1) !important;
+                border-color: var(--color-primary) !important;
+            }
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 14px !important;
+                font-weight: bold !important;
+            }
+        }
+
+        /* Hide navigation buttons on mobile */
+        @media (max-width: 767px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none !important;
+            }
+
+            .swiper-pagination {
+                bottom: 20px !important;
+            }
+        }
+
+        /* Typed.js Styling */
+        .typed-container {
+            min-width: 200px !important; /* CRITICAL: Prevent layout shifts */
+            overflow: hidden !important;
+            white-space: nowrap !important;
+            display: inline-block; /* Ensure it respects min-width */
+        }
+        .typed-element {
+            color: var(--color-primary) !important;
+            font-weight: 700 !important;
+            position: relative !important;
+        }
+
+        .typed-cursor {
+            color: var(--color-primary) !important;
+            font-weight: 300 !important;
+            animation: blink 1s infinite !important;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Particles.js Styling */
+        .particles-container {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: -1 !important;
+            pointer-events: none !important;
+        }
+
+        #particles-js {
+            position: absolute !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: transparent !important;
+        }
+
+        /* CRITICAL: Mobile optimization - disable particles */
+        @media (max-width: 768px) {
+            .particles-container {
+                display: none !important;
+            }
+        }
+
+        /* CRITICAL: Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .particles-container {
+                display: none !important;
+            }
+        }
+
+        /* CRITICAL: Performance optimization for low-end devices */
+        @media (max-width: 1024px) and (max-height: 768px) {
+            .particles-container {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body x-data="{ mobileMenuOpen: false, showBackToTop: false, navbarScrolled: false }" x-init="
+    window.addEventListener('scroll', () => {
+        showBackToTop = window.scrollY > 300;
+        navbarScrolled = window.scrollY > 50;
+    });
+">
+
+    <!-- Navigation -->
+    <nav class="navbar" :class="{ 'bg-color-bg shadow-lg': navbarScrolled, 'bg-transparent': !navbarScrolled }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="navbar-brand">BuildRight Homes</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-text-primary">Home</a>
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="btn-primary ml-4">Get a Free Quote</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hamburger" :class="{ 'active': mobileMenuOpen }" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu md:hidden" :class="{ 'active': mobileMenuOpen }">
+            <div class="px-4 py-2">
+                <a href="#home" @click="mobileMenuOpen = false" class="nav-link block">Home</a>
+                <a href="#about" @click="mobileMenuOpen = false" class="nav-link block">About Us</a>
+                <a href="#services" @click="mobileMenuOpen = false" class="nav-link block">Services</a>
+                <a href="#gallery" @click="mobileMenuOpen = false" class="nav-link block">Gallery</a>
+                <a href="#testimonials" @click="mobileMenuOpen = false" class="nav-link block">Testimonials</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="nav-link block">Contact</a>
+                <div class="p-4">
+                    <a href="#contact" @click="mobileMenuOpen = false" class="btn-primary w-full text-center">Get a Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-color: var(--color-bg);">
+        <div id="particles-js" class="particles-container"></div>
+        <div class="absolute inset-0">
+             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=600&fit=crop&crop=center"
+                 alt="Stunning completed home renovation by BuildRight Homes"
+                 class="w-full h-full object-cover opacity-30" loading="lazy">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-text-primary mb-6" style="font-family: var(--font-heading); font-weight: 400;">
+                    Transform Your Home with BuildRight Homes
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-text-secondary typed-container" style="font-family: var(--font-body);">
+                    <span id="hero-subtitle-typed"></span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#gallery" class="btn-primary">
+                        <i class="fas fa-hammer mr-2"></i>
+                        View Our Work
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-clipboard-list mr-2"></i>
+                        Get a Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20" style="background-color: var(--color-card-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">BuildRight Homes: Your Vision, Our Expertise.</h2>
+                <p class="text-xl max-w-3xl mx-auto text-text-secondary" style="font-family: var(--font-body);">
+                    Dedicated to transforming living spaces with unmatched quality and trust.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1622611935038-1c4caa0db5d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw2fHxTa2lsbGVkJTIwY29udHJhY3RvciUyMHRlYW18ZW58MHx8fHwxNzQ5NjUxNjA4fDA&ixlib=rb-4.1.0&q=80&w=1080&w=500&h=500&fit=crop&crop=center"
+                         alt="Skilled BuildRight Homes renovation team at work" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto hover-lift" loading="lazy"
+                         style="border-radius: var(--border-radius);">
+                </div>
+
+                <div data-aos="fade-left">
+                    <h3 class="text-text-primary mb-6">Reliable Craftsmanship for Over a Decade</h3>
+                    <p class="mb-6 leading-relaxed text-text-secondary" style="font-family: var(--font-body);">
+                        With <strong class="text-primary-color">over a decade of service</strong>, BuildRight Homes has been the community's choice for exceptional home renovations. We pride ourselves on our <strong class="text-primary-color">high-quality craftsmanship</strong>, commitment to using <strong class="text-primary-color">sustainable materials</strong>, and an unwavering focus on <strong class="text-primary-color">customer satisfaction</strong>.
+                    </p>
+
+                    <h4 class="text-text-primary mb-4">Our Mission:</h4>
+                    <p class="mb-6 leading-relaxed text-text-secondary" style="font-family: var(--font-body);">
+                        To improve living spaces by delivering reliable, skilled work that brings our clients' visions to life, ensuring comfort, beauty, and lasting value.
+                    </p>
+
+                    <h4 class="text-text-primary mb-4">Core Values:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-text-secondary" style="font-family: var(--font-body);">
+                        <li><strong class="text-primary-color">Craftsmanship:</strong> Uncompromising dedication to quality and detail.</li>
+                        <li><strong class="text-primary-color">Sustainability:</strong> Utilizing eco-friendly materials and practices.</li>
+                        <li><strong class="text-primary-color">Client-centric Approach:</strong> Your satisfaction is our highest priority.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20" style="background-color: var(--color-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">Our Renovation Services</h2>
+                <p class="text-xl max-w-3xl mx-auto text-text-secondary" style="font-family: var(--font-body);">
+                    Comprehensive solutions to transform every corner of your home.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="card hover-lift text-center p-6" data-aos="fade-up" data-aos-delay="100" style="border-radius: var(--border-radius);">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-primary-color" style="background-color: rgba(246, 166, 166, 0.2);">
+                        <i class="fa-solid fa-kitchen-set text-2xl icon"></i>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mb-4">Kitchen Remodels</h3>
+                    <p class="card-text text-text-secondary">
+                        Designing and building modern, functional kitchens that are the heart of your home. From custom cabinetry to smart appliances, we handle every detail.
+                    </p>
+                </div>
+
+                <div class="card hover-lift text-center p-6" data-aos="fade-up" data-aos-delay="200" style="border-radius: var(--border-radius);">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-primary-color" style="background-color: rgba(246, 166, 166, 0.2);">
+                        <i class="fa-solid fa-shower text-2xl icon"></i>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mb-4">Bathroom Upgrades</h3>
+                    <p class="card-text text-text-secondary">
+                        Creating luxurious and efficient bathrooms. We specialize in transforming outdated spaces into spa-like retreats with elegant fixtures and finishes.
+                    </p>
+                </div>
+
+                <div class="card hover-lift text-center p-6" data-aos="fade-up" data-aos-delay="300" style="border-radius: var(--border-radius);">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-primary-color" style="background-color: rgba(246, 166, 166, 0.2);">
+                        <i class="fa-solid fa-house-chimney text-2xl icon"></i>
+                    </div>
+                    <h3 class="card-title text-xl font-bold mb-4">Full Home Renovations</h3>
+                    <p class="card-text text-text-secondary">
+                        Seamless, comprehensive home transformations. We manage large-scale projects from concept to completion, ensuring cohesion and quality throughout.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery (Portfolio) -->
+    <section id="gallery" class="py-20" style="background-color: var(--color-card-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">Our Before & After Gallery</h2>
+                <p class="text-xl max-w-3xl mx-auto text-text-secondary" style="font-family: var(--font-body);">
+                    Witness the dramatic transformations of homes we've revitalized.
+                </p>
+            </div>
+
+            <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <!-- Portfolio Item 1 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1642497589594-c3e5fc670f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw1fHxLaXRjaGVuJTIwcmVtb2RlbCUyMGFmdGVyfGVufDB8fHx8MTc0OTY1MTYwOHww&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="After kitchen remodel" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Modern Kitchen Transformation</h3>
+                                <p class="card-text text-text-secondary">Before: Outdated Kitchen / After: Sleek, Open Concept</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1628746234554-3bb28b7dfd17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw1fHxCYXRocm9vbSUyMHVwZ3JhZGUlMjBhZnRlcnxlbnwwfHx8fDE3NDk2NTE2MDh8MA&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="After bathroom upgrade" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Spa-like Bathroom Retreat</h3>
+                                <p class="card-text text-text-secondary">Before: Small Bathroom / After: Spacious & Luxurious</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1573374584711-dad9cfd21e8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw4fHxGdWxsJTIwaG9tZSUyMHJlbm92YXRpb258ZW52fDB8fHx8MTc0OTY1MTYwOHww&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="After full home renovation" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Complete Home Remodel</h3>
+                                <p class="card-text text-text-secondary">Before: Entire Home / After: Modernized Living</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4 (Duplicate for quantity) -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1592008432356-8ef189954b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw3fHxDcmFmdHNtYW5zaGlwJTIwaG9tZSUyMHJlbW9kZWx8ZW58MHx8fHwxNzQ5NjUxNjA4fDA&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="Craftsmanship home remodel" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Living Room Enhancement</h3>
+                                <p class="card-text text-text-secondary">Before: Dull Space / After: Vibrant Living Area</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5 (Duplicate for quantity) -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1642497589594-c3e5fc670f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw1fHxLaXRjaGVuJTIwcmVtb2RlbCUyMGFmdGVyfGVufDB8fHx8MTc0OTY1MTYwOHww&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="Kitchen remodel before after" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Chef's Kitchen Upgrade</h3>
+                                <p class="card-text text-text-secondary">Before: Standard Kitchen / After: Professional Grade</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6 (Duplicate for quantity) -->
+                    <div class="swiper-slide">
+                        <div class="card hover-lift p-4" style="border-radius: var(--border-radius);">
+                            <img src="https://images.unsplash.com/photo-1628746234554-3bb28b7dfd17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NjE0MzF8MHwxfHNlYXJjaHw1fHxCYXRocm9vbSUyMHVwZ3JhZGUlMjBhZnRlcnxlbnwwfHx8fDE3NDk2NTE2MDh8MA&ixlib=rb-4.1.0&q=80&w=1080&w=600&h=400&fit=crop&crop=center"
+                                 alt="Bathroom remodel before after" class="w-full h-48 object-cover rounded-md mb-4" loading="lazy" style="border-radius: calc(var(--border-radius) / 2);">
+                            <div class="card-body">
+                                <h3 class="card-title text-xl font-bold mb-2">Elegant Powder Room</h3>
+                                <p class="card-text text-text-secondary">Before: Small Bathroom / After: Stylish & Modern</p>
+                                <a href="#" class="btn-secondary text-sm mt-4">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimonials" class="py-20" style="background-color: var(--color-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">What Our Clients Say</h2>
+                <p class="text-xl max-w-3xl mx-auto text-text-secondary" style="font-family: var(--font-body);">
+                    Hear directly from homeowners who trusted BuildRight Homes.
+                </p>
+            </div>
+
+            <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card p-6 text-center" style="border-radius: var(--border-radius);">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                            </div>
+                            <p class="card-text text-text-secondary italic mb-4" style="font-family: var(--font-body);">
+                                "BuildRight Homes transformed our outdated kitchen into a masterpiece. The craftsmanship is impeccable, and they finished ahead of schedule!"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4" loading="lazy">
+                                <p class="font-semibold text-text-primary">John D. <span class="text-text-muted">, Springfield</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card p-6 text-center" style="border-radius: var(--border-radius);">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                            </div>
+                            <p class="card-text text-text-secondary italic mb-4" style="font-family: var(--font-body);">
+                                "Our bathroom upgrade exceeded all expectations. The team was professional, clean, and incredibly skilled. Highly recommend BuildRight Homes!"
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4" loading="lazy">
+                                <p class="font-semibold text-text-primary">Sarah P. <span class="text-text-muted">, Riverdale</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card p-6 text-center" style="border-radius: var(--border-radius);">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                            </div>
+                            <p class="card-text text-text-secondary italic mb-4" style="font-family: var(--font-body);">
+                                "For our full home renovation, BuildRight Homes delivered perfection. They listened to our needs and created a truly stunning, sustainable living space."
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4" loading="lazy">
+                                <p class="font-semibold text-text-primary">Michael R. <span class="text-text-muted">, Lakeside</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial -->
+                    <div class="swiper-slide">
+                        <div class="card p-6 text-center" style="border-radius: var(--border-radius);">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                                <i class="fas fa-star text-primary-color"></i>
+                            </div>
+                            <p class="card-text text-text-secondary italic mb-4" style="font-family: var(--font-body);">
+                                "Choosing BuildRight Homes was the best decision. Their attention to detail and dedication to quality made our renovation journey stress-free and rewarding."
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Client Avatar" class="w-12 h-12 rounded-full mr-4" loading="lazy">
+                                <p class="font-semibold text-text-primary">Emily S. <span class="text-text-muted">, City Center</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background-color: var(--color-card-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-text-primary mb-4">Get a Free Quote</h2>
+                <p class="text-xl max-w-3xl mx-auto text-text-secondary" style="font-family: var(--font-body);">
+                    Let's discuss your next renovation project and bring your ideas to life.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <h3 class="text-text-primary mb-8">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: rgba(246, 166, 166, 0.2);">
+                                <i class="fas fa-envelope icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Email Address</h4>
+                                <p class="text-text-secondary">info@buildrighthomes.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: rgba(246, 166, 166, 0.2);">
+                                <i class="fas fa-phone icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Phone Number</h4>
+                                <p class="text-text-secondary">+1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: rgba(246, 166, 166, 0.2);">
+                                <i class="fas fa-map-marker-alt icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Business Address</h4>
+                                <p class="text-text-secondary">123 Renovation Rd, Builderville, CA 90210</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-text-primary mb-4">Find Us On:</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://facebook.com/buildrighthomes" aria-label="Facebook" class="w-10 h-10 rounded-full flex items-center justify-center bg-color-bg text-text-muted hover:text-primary-color transition-colors" style="border: 1px solid var(--color-border);"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/buildrighthomes" aria-label="Instagram" class="w-10 h-10 rounded-full flex items-center justify-center bg-color-bg text-text-muted hover:text-primary-color transition-colors" style="border: 1px solid var(--color-border);"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/buildrighthomes" aria-label="LinkedIn" class="w-10 h-10 rounded-full flex items-center justify-center bg-color-bg text-text-muted hover:text-primary-color transition-colors" style="border: 1px solid var(--color-border);"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="card p-6" style="border-radius: var(--border-radius);">
+                        <h3 class="text-xl font-bold mb-6 text-text-primary">Send Us a Message</h3>
+
+                        <form id="emailjs-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="field">
+                                    <label for="name" class="form-label">
+                                        <i class="fas fa-user mr-2 text-text-muted"></i>Name
+                                    </label>
+                                    <input type="text" name="name" id="name" required class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="field">
+                                    <label for="email" class="form-label">
+                                        <i class="fas fa-envelope mr-2 text-text-muted"></i>Email
+                                    </label>
+                                    <input type="email" name="email" id="email" required class="form-control" placeholder="your@email.com">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone mr-2 text-text-muted"></i>Phone Number
+                                </label>
+                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Your Phone Number">
+                            </div>
+                            <div class="field">
+                                <label for="service_interest" class="form-label">
+                                    <i class="fas fa-clipboard-list mr-2 text-text-muted"></i>Service of Interest
+                                </label>
+                                <select name="service_interest" id="service_interest" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="Kitchen Remodel">Kitchen Remodel</option>
+                                    <option value="Bathroom Upgrade">Bathroom Upgrade</option>
+                                    <option value="Full Home Renovation">Full Home Renovation</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="message" class="form-label">
+                                    <i class="fas fa-comment mr-2 text-text-muted"></i>Message
+                                </label>
+                                <textarea name="message" id="message" required rows="5" class="form-control" placeholder="Tell us about your project..."></textarea>
+                            </div>
+
+                            <div class="field hidden">
+                                <input type="hidden" name="to_email" id="to_email" value="mustafang4858@gmail.com">
+                            </div>
+
+                            <button type="submit" id="contact-btn" class="btn-primary w-full">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+
+                            <div id="success-message" class="hidden text-center py-3 rounded-lg" style="color: var(--color-success); background: rgba(16, 185, 129, 0.1);">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                Message sent successfully! We'll get back to you soon.
+                            </div>
+                            <div id="error-message" class="hidden text-center py-3 rounded-lg" style="color: var(--color-error); background: rgba(239, 68, 68, 0.1);">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                <span id="error-text">Failed to send message. Please try again.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Embedded Google Map -->
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-text-primary mb-4 text-center">Find Our Office</h3>
+                <div class="w-full h-64 md:h-96 rounded-lg overflow-hidden border border-color-border">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250567784089!2d-122.41941568468165!3d37.77492957975988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580854d19d675%3A0x608e9a265b79d2b7!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1678234567890!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-bg); border-top: 1px solid var(--color-border);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <a href="#home" class="navbar-brand mb-4 block" style="font-size: 2xl;">BuildRight Homes</a>
+                    <p class="mb-6 max-w-md text-text-secondary" style="font-family: var(--font-body);">
+                        Transforming living spaces with high-quality craftsmanship and sustainable materials. Your vision, our expertise.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/buildrighthomes" aria-label="Facebook" class="w-10 h-10 rounded-full flex items-center justify-center transition-all text-text-muted hover:text-primary-color" style="background-color: var(--color-card-bg); border: 1px solid var(--color-border);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/buildrighthomes" aria-label="Instagram" class="w-10 h-10 rounded-full flex items-center justify-center transition-all text-text-muted hover:text-primary-color" style="background-color: var(--color-card-bg); border: 1px solid var(--color-border);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/buildrighthomes" aria-label="LinkedIn" class="w-10 h-10 rounded-full flex items-center justify-center transition-all text-text-muted hover:text-primary-color" style="background-color: var(--color-card-bg); border: 1px solid var(--color-border);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4 text-text-primary">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">Home</a></li>
+                        <li><a href="#about" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">About Us</a></li>
+                        <li><a href="#services" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">Services</a></li>
+                        <li><a href="#gallery" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">Gallery</a></li>
+                        <li><a href="#testimonials" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">Testimonials</a></li>
+                        <li><a href="#contact" class="transition-colors text-text-muted hover:text-text-primary" style="font-family: var(--font-body); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4 text-text-primary">Our Services</h3>
+                    <ul class="space-y-2 text-text-muted" style="font-family: var(--font-body);">
+                        <li>Kitchen Remodels</li>
+                        <li>Bathroom Upgrades</li>
+                        <li>Full Home Renovations</li>
+                        <li>Sustainable Building</li>
+                        <li>Custom Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 text-center text-text-muted" style="border-top: 1px solid var(--color-border);">
+                <p>&copy; 2023 BuildRight Homes. All rights reserved.</p>
+                <p class="mt-2"><a href="#" class="text-text-muted hover:text-primary-color">Privacy Policy</a> | <a href="#" class="text-text-muted hover:text-primary-color">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+        x-show="showBackToTop"
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90"
+        class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all z-40"
+        style="background: var(--color-primary); color: var(--color-bg);"
+        onmouseover="this.style.transform='scale(1.1)'"
+        onmouseout="this.style.transform='scale(1)'"
+        aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Only load particles on desktop and if not reduced motion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+                document.body.appendChild(script);
+            }
+        });
+    </script>
+
+    <!-- Enhanced JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out',
+                once: true,
+                offset: 50,
+                disable: function() {
+                    return window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                }
+            });
+
+            // Initialize Typed.js for hero subtitle
+            const heroSubtitleTyped = document.getElementById('hero-subtitle-typed');
+            if (heroSubtitleTyped) {
+                new Typed('#hero-subtitle-typed', {
+                    strings: [
+                        'High-Quality Craftsmanship.',
+                        'Sustainable Materials.',
+                        'Over a Decade of Trusted Renovation.'
+                    ],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2500,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true,
+                    cursorChar: '|'
+                });
+            }
+
+            // Initialize Portfolio Swiper
+            const portfolioSwiper = new Swiper('.portfolio-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    320: { slidesPerView: 1, spaceBetween: 15 },
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 },
+                },
+                effect: 'slide',
+                speed: 600,
+                touchRatio: 1,
+                threshold: 5,
+                allowTouchMove: true,
+                preventInteractionOnTransition: false,
+                watchOverflow: true,
+                centerInsufficientSlides: true,
+            });
+
+            // Initialize Testimonial Swiper
+            const testimonialSwiper = new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    320: { slidesPerView: 1, spaceBetween: 15 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 },
+                },
+                effect: 'slide',
+                speed: 600,
+                touchRatio: 1,
+                threshold: 5,
+                allowTouchMove: true,
+                preventInteractionOnTransition: false,
+                watchOverflow: true,
+                centerInsufficientSlides: true,
+            });
+
+
+            // Initialize Particles.js (only on desktop and if not reduced motion)
+            if (typeof particlesJS !== 'undefined' && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 50, density: { enable: true, value_area: 800 } },
+                        color: { value: 'var(--color-primary)' },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                        size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.1, sync: false } },
+                        line_linked: { enable: true, distance: 150, color: 'var(--color-primary)', opacity: 0.2, width: 1 },
+                        move: { enable: true, speed: 1, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                    },
+                    retina_detect: true
+                });
+            }
+
+            // EmailJS Contact Form
+            const form = document.getElementById('emailjs-form');
+            const btn = document.getElementById('contact-btn');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+
+            if (form && btn) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+
+                    const serviceID = 'service_d1ikm0r';
+                    const templateID = 'template_y6yjh3h';
+
+                    emailjs.sendForm(serviceID, templateID, form)
+                        .then(function(response) {
+                            successMsg.classList.remove('hidden');
+                            form.reset();
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                            setTimeout(() => successMsg.classList.add('hidden'), 5000);
+                        }, function(error) {
+                            let errorMessage = 'Failed to send message. Please try again.';
+                            if (error.status === 422) errorMessage = 'Invalid template or service configuration.';
+                            else if (error.status === 412) errorMessage = 'Email service authentication error.';
+                            else if (error.status === 400) errorMessage = 'Invalid request. Please check your inputs.';
+
+                            errorText.textContent = errorMessage;
+                            errorMsg.classList.remove('hidden');
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                        });
+                });
+            }
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    if (window.Alpine) {
+                        Alpine.store('mobileMenuOpen', false); // Close mobile menu after clicking a link
+                    }
+                });
+            });
+
+            // Update active navigation link
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-text-primary'); // Remove primary color from all
+                    link.classList.add('text-text-secondary'); // Set secondary color for all
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-text-primary'); // Add primary color to active
+                        link.classList.remove('text-text-secondary');
+                    }
+                });
+            });
+
+            // Mobile menu close on outside click
+            document.addEventListener('click', function(event) {
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const hamburger = document.querySelector('.hamburger');
+                const navbar = document.querySelector('.navbar');
+
+                if (mobileMenu && hamburger && navbar) {
+                    if (!navbar.contains(event.target) && !hamburger.contains(event.target) && mobileMenu.classList.contains('active')) {
+                        // Use Alpine.js to close menu state
+                        if (window.Alpine) {
+                            window.Alpine.raw(window.Alpine.data(document.body).mobileMenuOpen = false);
+                        }
+                    }
+                }
+            });
+
+            // Prevent zoom on input focus (iOS fix for accessibility)
+            document.querySelectorAll('input, textarea, select').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    // Temporarily set font size to ensure it's not too small on iOS
+                    if (window.innerWidth < 768) { // Only apply for mobile devices
+                        element.style.fontSize = '16px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
